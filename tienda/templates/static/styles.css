@@ -1,0 +1,30 @@
+#fondo {
+    background-image: url(IMG/fondo.png);
+}
+
+#navbar1 {
+    background-color: #ffc2cc;
+}
+
+#carousel1 {
+    top: 40px;
+}
+
+#ofertas_h1_1 {
+    display: block;
+    margin-top: 50px;
+}
+
+#ofertas_h1_2 {
+    display: block;
+    margin-top: 30px;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    filter: invert(100%);
+}
+
+#footer {
+    margin-top: 50px;
+    background-color: rgb(255, 205, 205);
+}

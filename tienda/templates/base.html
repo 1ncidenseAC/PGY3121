@@ -1,0 +1,45 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+    <head>
+        <title> BaquitoPet </title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" href="{% static 'styles.css' %}" type="text/css">
+    </head>
+    <body id="fondo">
+        {% block contenido %} {% endblock %}
+        <script>
+            let carrito = [];
+            let precio = 0;
+            function Añadir(producto, precioProducto) {
+                carrito.push({ name: producto, price: precioProducto });
+                precio += precioProducto;
+                Listado();
+            }
+            function Listado() {
+                const contenido = document.getElementById('carrito');
+                const precios = document.getElementById('precio');
+                alert("Añadido al carrito 😍");
+                contenido.innerHTML = '';
+                carrito.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = `${item.name} $${item.price.toFixed(0)}`;
+                    contenido.appendChild(li);
+                });
+                precios.textContent = precio.toFixed(0);
+            }
+            function Fin() {
+                const validar = document.getElementById('carrito');
+                if(validar.innerHTML == null || validar.innerHTML == '') { 
+                    alert("No hay productos en el carrito");
+                }else{
+                    alert("Gracias por su compra ❤️");
+                }
+            }
+          </script>
+    </body>
+    <footer id="footer">
+        {% block footer %} {% endblock %}
+    </footer>
+</html>
